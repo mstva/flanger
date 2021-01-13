@@ -1,0 +1,24 @@
+<h3>Instruments Feed </h3>
+
+<% @instruments.each do |instrument| %>
+  <% if instrument.user_id != current_user.id %>
+    <div>
+      <div>
+        <p><strong>Name: </strong><%= instrument.user.name %></p>
+        <p><strong>Username: </strong><%= instrument.user.username %></p>
+        <p><strong>Title: </strong><%= instrument.title %></p>
+        <p><strong>Description: </strong><%= instrument.description %></p>
+        <p><strong>Brand: </strong><%= instrument.brand %></p>
+        <p><strong>Model: </strong><%= instrument.model %></p>
+        <p><strong>Condition: </strong><%= instrument.condition %></p>
+        <p><strong>Finish: </strong><%= instrument.finish %></p>
+        <p><strong>Price: </strong><%= instrument.price %></p>
+        <button><%= link_to 'Show', instrument %></button>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+  <% end %>
+<% end %>
+

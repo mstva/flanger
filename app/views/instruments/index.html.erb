@@ -1,0 +1,8 @@
+<% if current_user.nil? %>
+  <button><%= link_to 'Login', new_user_session_path %></button>
+  <button><%= link_to 'Register', new_user_registration_path %></button>
+<% else %>
+
+  <%= render 'feed' %>
+
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <p style="display: inline"><%= current_user.name %>(@<%= current_user.username %>)</p>
+  <button style="display: inline"><%= link_to 'Edit User', edit_user_registration_path %></button>
+  <button style="display: inline"><%= link_to 'Back', root_path %></button>
+</div>
+
+<br>
+
+<div>
+  <h3 style="display: inline">Your Shots</h3>
+  <button style="display: inline"><%= link_to 'New Instrument', new_instrument_path %></button>
+</div>
+
+<br>
+
+<% current_user.instruments.each do |instrument| %>
+  <div>
+    <p><strong>Title: </strong><%= instrument.title %></p>
+    <p><strong>Description: </strong><%= instrument.description %></p>
+    <p><strong>Brand: </strong><%= instrument.brand %></p>
+    <p><strong>Model: </strong><%= instrument.model %></p>
+    <p><strong>Condition: </strong><%= instrument.condition %></p>
+    <p><strong>Finish: </strong><%= instrument.finish %></p>
+    <p><strong>Price: </strong><%= instrument.price %></p>
+  </div>
+  <button><%= link_to 'Show', instrument %></button>
+  <button><%= link_to 'Edit', edit_instrument_path(instrument) %></button>
+  <button><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <br>
+  <br>
+<% end %>

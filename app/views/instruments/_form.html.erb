@@ -1,0 +1,57 @@
+<%= form_with(model: instrument, local: true) do |form| %>
+  <% if instrument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(instrument.errors.count, "error") %> prohibited this instrument from being saved:</h2>
+
+      <ul>
+        <% instrument.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition %>
+    <%= form.text_field :condition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finish %>
+    <%= form.text_field :finish %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
