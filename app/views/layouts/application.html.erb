@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flanger</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<% if current_user %>
+  <button><%= link_to 'Home', root_path %></button>
+  <button><%= link_to 'Profile', user_path(current_user.id) %></button>
+  <button><%= link_to 'Logout', destroy_user_session_path, method: :delete %></button>
+  <hr>
+  <hr>
+  <hr>
+<% end %>
+<%= yield %>
+</body>
+</html>
