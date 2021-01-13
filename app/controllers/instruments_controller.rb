@@ -9,14 +9,14 @@ class InstrumentsController < ApplicationController
   end
 
   def new
-    @instrument = current_user.nstruments.build
+    @instrument = current_user.instruments.build
   end
 
   def edit
   end
 
   def create
-    @instrument = current_user.nstruments.build(instrument_params)
+    @instrument = current_user.instruments.build(instrument_params)
 
     respond_to do |format|
       if @instrument.save
